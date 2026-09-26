@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ZWA-Qtela</string>
+    <string name="Myproject">My Project</string>
+    <string name="descripsi">
+      Qtela merupakan makanan ringan
+        berupa keripik yang terbuat dari
+        bahan seperti singkong atau kentang,
+        tergantung pada varian produknya.
+        Qtela memiliki beberapa pilihan
+        rasa dan jenis,salah satunya
+        adalah keripik singkong dengan berbagai
+        varian rasa. terdapat pada kemasan produk Qtela.
+    </string>
+    <string name="descripsi2">
+      Singkong (63%), Minyak Olein Kelapa Sawit,
+        Bumbu Rasa Barbeque(mengandung Gula, Garam,
+        Penguat Rasa Mononatrium Glutamat,
+        Kecap Bubuk, Rempah-rempah,
+        Pewarna Alami Karmin CI 75470 dan
+        Karamel III, Pemanis Alami Glikosida Steviol),
+        Daging Sapi Bubuk (0.001%).
+
+    </string>
+    <string name="descripsi3">
+
+
+        \nTakaran Saji \20 g
+        \n2 Sajian per Kemasan
+        \nEnergi Total: 110 kkal
+        \nEnergi dari lemak: 50 kkal
+        \nLemak Total       6g      8%
+        \nLemak Jenuh      2,5g     13%
+        \nProtein           0g      0%
+        \nKarbohidrat Total 13g     4%
+        \nGula              1g
+        \nGaram(Natrium)    50mg    3%
+    </string>
+</resources>
