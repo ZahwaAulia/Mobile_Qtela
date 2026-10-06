@@ -22,18 +22,17 @@ class WebViewActivity : AppCompatActivity() {
             insets
         }
 
-        // Mengaktifkan toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Web Qtela"
+            title = "Badmintoon"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_back)
+            setHomeAsUpIndicator(R.drawable.ic_new)
         }
 
         binding.webView.webViewClient = WebViewClient()
         binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://www.indofood.com/product/qtela")
+        binding.webView.loadUrl("https://www.bolasport.com/tag/bulu-tangkis")
 
         // Agar Toolbar hide/show saat scroll web
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->

@@ -1,164 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/polos"
+    android:background="#FFF8EC"
     tools:context=".FifthActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="#FFF8EC">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFF3D0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:subtitleTextColor="#8B0000"
-            app:titleTextColor="#8B0000"
-            app:layout_scrollFlags="scroll|enterAlways">
+            android:background="#1A523A"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextColor="#FFFFFF"
+            app:subtitleTextColor="#FFFFFF" />
 
-
-        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:padding="24dp"
-        android:clipToPadding="false">
+        android:layout_marginTop="131dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWebView"
+            android:layout_width="325dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="184dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/btnWebView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="WebView"
-                android:textColor="#8B0000"
-                android:backgroundTint="#FFF3E0"
-                app:icon="@drawable/ic_linkk"
-                app:iconSize="30dp"
-                app:iconGravity="textStart"/>
-
-
-            <!-- Konten informasi website Qtela -->
-
-            <!-- Konten informasi website Qtela -->
-
-            <TextView
+            <!-- ISI CARD -->
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tentang Qtela"
-                android:textColor="#FFD54F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Qtela merupakan merek makanan ringan yang menawarkan camilan dengan bahan dasar singkong dan berbagai pilihan lainnya. Qtela cocok dinikmati saat bersantai bersama keluarga dan teman."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp" />
+                <!-- JUDUL -->
+                <TextView
+                    android:id="@+id/textweb"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Portal Kabar Badminton"
+                    android:textAlignment="center"
+                    android:textColor="#1A523A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Produk Qtela"
-                android:textColor="#FFD54F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp" />
+                <!-- DESKRIPSI -->
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Jangan ketinggalan kabar terbaru seputar dunia badminton lokal hingga internasional"
+                    android:textAlignment="center"
+                    android:textColor="#1A523A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textweb" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Qtela menyediakan berbagai pilihan camilan yang dapat dinikmati dalam berbagai suasana. Setiap produk memiliki karakteristik dan rasa yang berbeda."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp" />
+                <Button
+                    android:id="@+id/btnWebView"
+                    android:layout_width="137dp"
+                    android:layout_height="37dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#F37335"
+                    android:text="WebView"
+                    android:textColor="#FFFFFF"
+                    app:icon="@drawable/ic_linkk"
+                    app:iconGravity="textStart"
+                    app:iconSize="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Varian Rasa"
-                android:textColor="#FFD54F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Qtela memiliki pilihan rasa yang beragam. Kamu dapat melihat informasi varian rasa melalui kemasan produk atau saluran resmi Qtela."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp" />
+        </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Keunggulan Qtela"
-                android:textColor="#FFD54F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="196dp"
+            android:layout_height="195dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/lima" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Qtela dapat menjadi pilihan camilan untuk menemani waktu santai, menonton film, belajar, atau berkumpul bersama teman. Kemasannya juga praktis untuk dibawa bepergian."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Informasi Produk"
-                android:textColor="#FFD54F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Untuk mengetahui informasi lebih lanjut mengenai produk, varian, dan merek Qtela, kamu dapat mengunjungi website resmi Qtela atau situs produsen yang menaunginya."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nikmati Qtela"
-                android:textColor="#FFD54F"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Temukan camilan Qtela pilihanmu dan nikmati waktu santai dengan camilan favorit. Jangan lupa periksa informasi pada kemasan sebelum membeli."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="24dp" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

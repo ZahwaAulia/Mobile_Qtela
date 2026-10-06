@@ -5,29 +5,53 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/snaek"
+    android:background="#1A523A"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="277dp"
-        android:layout_height="270dp"
+        android:layout_width="544dp"
+        android:layout_height="680dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271"
-        app:srcCompat="@drawable/qtelaa" />
+        app:layout_constraintVertical_bias="0.313"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="748dp"
+        android:layout_height="841dp"
+        android:layout_marginEnd="4dp"
+
+        android:layout_marginBottom="284dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/satu" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="1547dp"
+        android:layout_height="1322dp"
+        android:layout_marginTop="112dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dua" />
 
     <Button
         android:id="@+id/btnsubmit"
         android:layout_width="142dp"
         android:layout_height="53dp"
-        android:backgroundTint="#FFF3E0"
+        android:backgroundTint="#F37335"
         android:fontFamily="@font/varsity"
-        android:text="@string/Myproject"
-        android:textColor="#8B0000"
+        android:text="@string/Mulai"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -35,18 +59,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.724" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="155dp"
-        android:layout_height="75dp"
-        android:fontFamily="@font/varsity"
-        android:text="QTELA"
-        android:textColor="#FFFFFF"
-        android:textColorLink="#3A0E0E"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,8 @@
 <resources>
     <string name="app_name">ZWA-Qtela</string>
-    <string name="Myproject">My Project</string>
+    <string name="Mulai">Mulai</string>
     <string name="descripsi">
-      Qtela merupakan makanan ringan
-        berupa keripik yang terbuat dari
-        bahan seperti singkong atau kentang,
-        tergantung pada varian produknya.
-        Qtela memiliki beberapa pilihan
-        rasa dan jenis,salah satunya
-        adalah keripik singkong dengan berbagai
-        varian rasa. terdapat pada kemasan produk Qtela.
+      Amankan lapangan favoritmu, rakit tim impian, dan jangan kasih kendor!.
     </string>
     <string name="descripsi2">
       Singkong (63%), Minyak Olein Kelapa Sawit,

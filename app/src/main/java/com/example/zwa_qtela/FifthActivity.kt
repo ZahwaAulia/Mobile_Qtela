@@ -26,11 +26,10 @@ class FifthActivity : AppCompatActivity() {
         }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Detail Produk Qtela"
-            subtitle = "Ini adalah subtitle"
+            title = "Badminton News"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_back)
+            setHomeAsUpIndicator(R.drawable.ic_new)
         }
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(this, WebViewActivity::class.java))

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF8EC"
     tools:context=".WebViewActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -15,23 +16,23 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFF3D0"
+            android:background="#1A523A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:subtitleTextColor="#8B0000"
-            app:titleTextColor="#8B0000"
+            app:subtitleTextColor="#FFFFFF"
+            app:titleTextColor="#FFFFFF"
             app:layout_scrollFlags="scroll|enterAlways"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <WebView
         android:id="@+id/webView"
-        android:background="@drawable/polos"
+        android:background="#FFF8EC"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
