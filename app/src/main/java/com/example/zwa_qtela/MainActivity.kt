@@ -61,8 +61,8 @@ class MainActivity : AppCompatActivity() {
 
                     dialog.dismiss()
 
-                    // Kembali ke AuthActivity
-                    val intent = Intent(this, AuthActivity::class.java)
+                    // Kembali ke ThirdResultActivity
+                    val intent = Intent(this, ThirdResultActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
