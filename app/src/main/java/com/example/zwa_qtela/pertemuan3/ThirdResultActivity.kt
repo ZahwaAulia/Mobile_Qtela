@@ -6,11 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.zwa_qtela.FifthActivity
+import com.example.zwa_qtela.AuthActivity
 import com.example.zwa_qtela.R
-import com.example.zwa_qtela.databinding.ActivityMainBinding
 import com.example.zwa_qtela.databinding.ActivityThirdResultBinding
-import com.example.zwa_qtela.sign_in
 
 class ThirdResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdResultBinding
@@ -26,7 +24,10 @@ class ThirdResultActivity : AppCompatActivity() {
             insets
         }
         binding.btntofifth.setOnClickListener {
-            val intent = Intent(this@ThirdResultActivity, sign_in::class.java)
+          val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+            sharedPref.edit().putBoolean("isLogin", false).apply()
+
+            val intent = Intent(this@ThirdResultActivity, AuthActivity::class.java)
             startActivity(intent)
         }
     }
