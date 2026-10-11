@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,10 +35,11 @@ class MainActivity : AppCompatActivity() {
             )
             insets
         }
-
-        // SharedPreferences
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-
+        val imageProfilee = findViewById<ImageView>(R.id.imageprofilee)
+        imageProfilee.setOnClickListener {
+            val intent = Intent(this, ProfActivity::class.java)
+            startActivity(intent)
+        }
         // Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
@@ -47,30 +49,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(this, WebViewActivity::class.java))
         }
-        // Tombol Logout
-        binding.btnLogout.setOnClickListener {
-            MaterialAlertDialogBuilder(this)
-                .setTitle("Konfirmasi")
-                .setMessage("Apakah Anda yakin ingin logout?")
-                .setPositiveButton("Ya") { dialog, _ ->
 
-                    // Hapus SharedPreferences
-                    val editor = sharedPref.edit()
-                    editor.clear()
-                    editor.apply()
-
-                    dialog.dismiss()
-
-                    // Kembali ke ThirdResultActivity
-                    val intent = Intent(this, ThirdResultActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-                .setNegativeButton("Batal") { dialog, _ ->
-                    dialog.dismiss()
-                }
-                .show()
-        }
     }
 
     override fun onStart() {
