@@ -35,7 +35,7 @@ class SplashScreenActivity : AppCompatActivity() {
                     Intent(this@SplashScreenActivity, MainActivity::class.java))
             } else {
                 startActivity(
-                    Intent(this@SplashScreenActivity, ThirdResultActivity::class.java))
+                    Intent(this@SplashScreenActivity, AuthActivity::class.java))
             }
             finish()
         }

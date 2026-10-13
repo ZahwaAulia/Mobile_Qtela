@@ -27,7 +27,7 @@ class ThirdResultActivity : AppCompatActivity() {
           val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             sharedPref.edit().putBoolean("isLogin", false).apply()
 
-            val intent = Intent(this@ThirdResultActivity, AuthActivity::class.java)
+            val intent = Intent(this@ThirdResultActivity, ThirdResultActivity::class.java)
             startActivity(intent)
         }
     }

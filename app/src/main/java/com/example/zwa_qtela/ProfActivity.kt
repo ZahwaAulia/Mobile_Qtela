@@ -50,8 +50,7 @@ class ProfActivity : AppCompatActivity() {
 
                     dialog.dismiss()
 
-                    // Kembali ke ThirdResultActivity
-                    val intent = Intent(this, ThirdResultActivity::class.java)
+                    val intent = Intent(this, AuthActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
