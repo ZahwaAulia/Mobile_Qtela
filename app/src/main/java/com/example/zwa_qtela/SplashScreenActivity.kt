@@ -13,14 +13,6 @@ import kotlinx.coroutines.delay
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-        val isLogin=sharedPref.getBoolean("isLogin", false)
-        if (isLogin){
-            Intent(this@SplashScreenActivity, MainActivity::class.java)
-        }
-
         setContentView(R.layout.activity_splash_screen)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,16 +21,22 @@ class SplashScreenActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch {
-            delay(2000) //simulasi pengambilan data selama 2 detik
+            delay(2000)
 
-            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-            val isLogin=sharedPref.getBoolean("isLogin", false)
-            val intent = if(isLogin){
-                Intent(this@SplashScreenActivity, ThirdResultActivity::class.java)
-            }else{
-                Intent(this@SplashScreenActivity, ThirdResultActivity::class.java)
+            val sharedPref = getSharedPreferences(
+                "user_pref",
+                MODE_PRIVATE
+            )
+
+            val isLogin = sharedPref.getBoolean("isLogin", false)
+
+            if (isLogin) {
+                startActivity(
+                    Intent(this@SplashScreenActivity, MainActivity::class.java))
+            } else {
+                startActivity(
+                    Intent(this@SplashScreenActivity, ThirdResultActivity::class.java))
             }
-            startActivity(intent)
             finish()
         }
     }
