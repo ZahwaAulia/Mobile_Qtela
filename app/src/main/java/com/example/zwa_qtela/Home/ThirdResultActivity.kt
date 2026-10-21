@@ -1,4 +1,4 @@
-package com.example.zwa_qtela.pertemuan3
+package com.example.zwa_qtela.Home
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.zwa_qtela.AuthActivity
 import com.example.zwa_qtela.R
 import com.example.zwa_qtela.databinding.ActivityThirdResultBinding
 

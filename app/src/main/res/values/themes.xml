@@ -1,9 +1,19 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ZWAQtela" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ZWAQtela" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">#1A523A</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Warna latar menu titik tiga -->
+        <item name="actionOverflowMenuStyle">@style/GreenPopupMenu</item>
+
     </style>
 
-    <style name="Theme.ZWAQtela" parent="Base.Theme.ZWAQtela" />
+    <style name="GreenPopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">#1A523A</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.zwa_qtela
+package com.example.zwa_qtela.Home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.zwa_qtela.R
 import com.example.zwa_qtela.databinding.ActivityProfBinding
-import com.example.zwa_qtela.databinding.ActivityProfileBinding
-import com.example.zwa_qtela.pertemuan3.ThirdResultActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ProfActivity : AppCompatActivity() {
@@ -24,16 +23,6 @@ class ProfActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val imageProf = findViewById<ImageView>(R.id.imageprof)
-        imageProf.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-            val imageBeranda = findViewById<ImageView>(R.id.imageBerandaa)
-            imageBeranda.setOnClickListener {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         // Tombol Logout

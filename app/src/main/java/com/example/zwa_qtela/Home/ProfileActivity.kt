@@ -1,4 +1,4 @@
-package com.example.zwa_qtela
+package com.example.zwa_qtela.Home
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.zwa_qtela.databinding.ActivityMainBinding
+import com.example.zwa_qtela.R
 import com.example.zwa_qtela.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
@@ -25,28 +25,26 @@ class ProfileActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val imageBeranda = findViewById<ImageView>(R.id.imageBerandaa)
-        imageBeranda.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         setSupportActionBar(binding.toolbar)
+
         supportActionBar?.apply {
             title = "Profil Developer"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_new)
         }
+
     }
-    override  fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
             else -> super.onOptionsItemSelected(item)
-
         }
     }
+
 }

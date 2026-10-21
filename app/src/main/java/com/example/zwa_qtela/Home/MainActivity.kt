@@ -1,19 +1,17 @@
-package com.example.zwa_qtela
+package com.example.zwa_qtela.Home
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.zwa_qtela.R
 import com.example.zwa_qtela.databinding.ActivityMainBinding
-import com.example.zwa_qtela.pertemuan3.ThirdResultActivity
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -25,58 +23,69 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(
+        // Mengatur jarak konten dari status bar dan navigation bar
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { view, insets ->
+            val systemBars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars()
+            )
+
+            view.setPadding(
                 systemBars.left,
                 systemBars.top,
                 systemBars.right,
                 systemBars.bottom
             )
+
             insets
         }
-        val imageProfilee = findViewById<ImageView>(R.id.imageprofilee)
-        imageProfilee.setOnClickListener {
-            val intent = Intent(this, ProfActivity::class.java)
-            startActivity(intent)
-        }
-        // Toolbar
+
+        // Mengatur Toolbar
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply {
-            title = "SHUTTLY"
-        }
+        supportActionBar?.title = "SHUTTLY"
+
+
         // Tombol WebView
         binding.btnWebView.setOnClickListener {
-            startActivity(Intent(this, WebViewActivity::class.java))
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
         }
-
     }
 
     override fun onStart() {
         super.onStart()
-        Log.e("onStart", "onStart: {Main Activity} terlihat di layar")
+        Log.e("MainActivity", "Main Activity terlihat di layar")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("onDestroy", "{Main Activity} dihapus dari stack")
+        Log.e("MainActivity", "Main Activity dihapus dari stack")
     }
 
+    // Menampilkan menu pada Toolbar
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
+    // Mengatur aksi menu Toolbar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
 
             R.id.action_search -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Search Clicked",
+                    Toast.LENGTH_SHORT
+                ).show()
                 true
             }
 
             R.id.action_settings -> {
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Settings Clicked",
+                    Toast.LENGTH_SHORT
+                ).show()
                 true
             }
 

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF8EC"
-    tools:context=".ProfileActivity">
+    tools:context=".Home.ProfileActivity">
 
     <!-- TOOLBAR ATAS -->
     <com.google.android.material.appbar.AppBarLayout
@@ -405,125 +405,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- TOOLBAR BAWAH: DIPINDAHKAN KE LUAR KONTEN PROFIL -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbar1"
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_gravity="bottom"
-        android:background="#1A523A"
-        android:elevation="8dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp">
-
-        <ImageView
-            android:id="@+id/imageBerandaa"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:contentDescription="Beranda"
-            android:src="@drawable/beranda"
-            app:layout_constraintEnd_toStartOf="@id/imagelapangan"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textberanda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Beranda"
-            android:textColor="#FFF8EC"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@id/imageBerandaa"
-            app:layout_constraintStart_toStartOf="@id/imageBerandaa"
-            app:layout_constraintTop_toBottomOf="@id/imageBerandaa" />
-
-        <ImageView
-            android:id="@+id/imagelapangan"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:contentDescription="Lapangan"
-            android:src="@drawable/lapangan"
-            app:layout_constraintEnd_toStartOf="@id/imageboking"
-            app:layout_constraintStart_toEndOf="@id/imageBerandaa"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textlapangan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lapangan"
-            android:textColor="#FFF8EC"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@id/imagelapangan"
-            app:layout_constraintStart_toStartOf="@id/imagelapangan"
-            app:layout_constraintTop_toBottomOf="@id/imagelapangan" />
-
-        <ImageView
-            android:id="@+id/imageboking"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:contentDescription="Booking"
-            android:src="@drawable/booking"
-            app:layout_constraintEnd_toStartOf="@id/imageriwayat"
-            app:layout_constraintStart_toEndOf="@id/imagelapangan"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textpbooking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Booking"
-            android:textColor="#FFF8EC"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@id/imageboking"
-            app:layout_constraintStart_toStartOf="@id/imageboking"
-            app:layout_constraintTop_toBottomOf="@id/imageboking" />
-
-        <ImageView
-            android:id="@+id/imageriwayat"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:contentDescription="Riwayat"
-            android:src="@drawable/riwayat"
-            app:layout_constraintEnd_toStartOf="@id/imageprofilee"
-            app:layout_constraintStart_toEndOf="@id/imageboking"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textriwayat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Riwayat"
-            android:textColor="#FFF8EC"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@id/imageriwayat"
-            app:layout_constraintStart_toStartOf="@id/imageriwayat"
-            app:layout_constraintTop_toBottomOf="@id/imageriwayat" />
-
-        <ImageView
-            android:id="@+id/imageprofilee"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:contentDescription="Profile"
-            android:src="@drawable/profilee"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageriwayat"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textprofile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:textColor="#FFF8EC"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="@id/imageprofilee"
-            app:layout_constraintStart_toStartOf="@id/imageprofilee"
-            app:layout_constraintTop_toBottomOf="@id/imageprofilee" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
