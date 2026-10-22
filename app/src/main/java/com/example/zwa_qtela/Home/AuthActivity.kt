@@ -33,28 +33,86 @@ class AuthActivity : AppCompatActivity() {
             startActivity(i)
             finish()
         }
+//        binding.btnLogin.setOnClickListener {
+//            val username = binding.edUsername.text.toString()
+//            val password = binding.edPassword.text.toString()
+//
+//            if (username == password) {
+//                // set value isLogin
+//                val editor = sharedPref.edit()
+//                editor.putBoolean("isLogin", true)
+//                editor.putString("username", username)
+//                editor.apply()
+//
+//                //berpindah ke halaman
+//                val i = Intent(this, MainActivity::class.java)
+//                startActivity(i)
+//                Toast.makeText(this, "${username} - ${password}", Toast.LENGTH_LONG).show()
+//            } else {
+//                MaterialAlertDialogBuilder(this)
+//                    .setTitle("Opps..")
+//                    .setMessage("Username atau Password Salah!")
+//                    .show()
+//            }
+//
+//        }
+
         binding.btnLogin.setOnClickListener {
-            val username = binding.edUsername.text.toString()
+            val username = binding.edUsername.text.toString().trim()
             val password = binding.edPassword.text.toString()
 
-            if (username == password) {
-                // set value isLogin
-                val editor = sharedPref.edit()
-                editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
-                editor.apply()
+            val sharedPref = getSharedPreferences(
+                "user_pref",
+                MODE_PRIVATE
+            )
 
-                //berpindah ke halaman
-                val i = Intent(this, MainActivity::class.java)
-                startActivity(i)
-                Toast.makeText(this, "${username} - ${password}", Toast.LENGTH_LONG).show()
-            } else {
-                MaterialAlertDialogBuilder(this)
-                    .setTitle("Opps..")
-                    .setMessage("Username atau Password Salah!")
+            val usernameTersimpan =
+                sharedPref.getString("username", "") ?: ""
+
+            val passwordTersimpan =
+                sharedPref.getString("password", "") ?: ""
+
+            if (username.isBlank() || password.isBlank()) {
+                com.google.android.material.dialog.MaterialAlertDialogBuilder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Username dan password wajib diisi!")
+                    .setPositiveButton("OK", null)
                     .show()
+
+                return@setOnClickListener
             }
 
+            val loginPraktikum = username == password
+
+            val loginSharedPreferences =
+                username == usernameTersimpan &&
+                        password == passwordTersimpan &&
+                        usernameTersimpan.isNotBlank()
+
+            if (loginPraktikum || loginSharedPreferences) {
+                sharedPref.edit()
+                    .putBoolean("isLogin", true)
+                    .putString("usernameLogin", username)
+                    .apply()
+
+                startActivity(
+                    Intent(this, MainActivity::class.java)
+                )
+                finish()
+            } else {
+                com.google.android.material.dialog.MaterialAlertDialogBuilder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Username atau password salah!")
+                    .setPositiveButton("OK", null)
+                    .show()
+            }
         }
+
+        binding.btnRegistrasi.setOnClickListener {
+            startActivity(
+                Intent(this, RegisterActivity::class.java)
+            )
+        }
+
     }
 }
