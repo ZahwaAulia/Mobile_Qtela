@@ -30,4 +30,11 @@
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dark_mode_title">Mode Gelap / Dark Mode</string>
+    <string name="settings_title">Pengaturan</string>
+    <string name="select_theme">Pilih Tema Material 3</string>
+    <string name="alarm_title">Pengingat Alarm (AlarmManager)</string>
+    <string name="alarm_not_set">Alarm belum diatur</string>
+    <string name="btn_set_alarm">Atur Alarm</string>
+    <string name="btn_cancel_alarm">Batal Alarm</string>
 </resources>

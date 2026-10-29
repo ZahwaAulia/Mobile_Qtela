@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF8EC"
+    android:background="@color/bg_main"
     tools:context=".Profile.ProfileFragment">
 
     <!-- TOOLBAR -->
@@ -68,11 +68,46 @@
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/brow"
                     android:text="Zahwa Aulia"
-                    android:textColor="#1A523A"
+                    android:textColor="@color/text_primary"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
+
+            <!-- KARTU PENGATURAN TEMA (DARK MODE) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dark_mode_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- KARTU DATA DIRI -->
             <com.google.android.material.card.MaterialCardView
@@ -80,11 +115,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/card_bg"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="3dp"
-                app:strokeColor="#E8E0D3"
-                app:strokeWidth="1dp">
+                app:cardElevation="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -97,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:text="Data Diri"
-                        android:textColor="#1A523A"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -122,7 +155,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:text="Nama Lengkap"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -132,7 +165,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Zahwa Aulia"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -158,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:text="Email"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -168,7 +201,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Zahwa@gmail.com"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -194,7 +227,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:text="Lokasi"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -204,7 +237,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Pekanbaru"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -230,7 +263,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:text="Pendidikan"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -240,7 +273,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="D4 Teknik Informatika"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -266,7 +299,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:text="Tanggal Lahir"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -276,7 +309,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="31 Agustus 2006"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -302,7 +335,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:text="Hobi"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -312,7 +345,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Membaca"
-                            android:textColor="#1A523A"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -327,11 +360,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="#FFFFFF"
+                app:cardBackgroundColor="@color/card_bg"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="3dp"
-                app:strokeColor="#E8E0D3"
-                app:strokeWidth="1dp">
+                app:cardElevation="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -346,7 +377,7 @@
                         android:layout_marginBottom="16dp"
                         android:text="Sosial Media"
                         android:textAlignment="center"
-                        android:textColor="#1A523A"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -379,7 +410,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="zhwalyaaa"
-                                android:textColor="#1A523A"
+                                android:textColor="@color/text_primary"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
@@ -408,7 +439,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="zahwaaulia"
-                                android:textColor="#1A523A"
+                                android:textColor="@color/text_primary"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
@@ -437,7 +468,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="zhwa"
-                                android:textColor="#1A523A"
+                                android:textColor="@color/text_primary"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
