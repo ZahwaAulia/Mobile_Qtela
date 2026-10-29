@@ -3,8 +3,14 @@
 
     <style name="Theme.ZWAQtela" parent="Theme.Material3.DayNight.NoActionBar">
 
+        <!-- Warna utama aplikasi -->
         <item name="colorPrimary">#1A523A</item>
         <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Pengaturan status bar agar jam tetap terlihat -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">#FFF8EC</item>
+        <item name="android:windowLightStatusBar">true</item>
 
         <!-- Warna latar menu titik tiga -->
         <item name="actionOverflowMenuStyle">@style/GreenPopupMenu</item>

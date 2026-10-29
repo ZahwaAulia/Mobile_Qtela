@@ -13,35 +13,37 @@ import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.zwa_qtela.R
-import com.example.zwa_qtela.utils.ThemePreferences
 import com.example.zwa_qtela.databinding.ActivityMainBinding
+import com.example.zwa_qtela.utils.ThemePreferences
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Mengatur jarak konten dari status bar dan navigation bar
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { view, insets ->
-            val systemBars = insets.getInsets(
-                WindowInsetsCompat.Type.systemBars()
-            )
+        // Tampilkan status bar dan gunakan area konten normal
+        window.clearFlags(
+            android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
-            view.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
+        androidx.core.view.WindowCompat.setDecorFitsSystemWindows(
+            window,
+            true
+        )
 
-            insets
-        }
+        window.statusBarColor = android.graphics.Color.parseColor("#FFF8EC")
+
+        androidx.core.view.WindowInsetsControllerCompat(
+            window,
+            window.decorView
+        ).isAppearanceLightStatusBars = true
 
         // Mengatur Toolbar
         setSupportActionBar(binding.toolbar)
@@ -49,22 +51,23 @@ class MainActivity : AppCompatActivity() {
 
         // Tombol WebView
         binding.btnWebView.setOnClickListener {
-            val intent = Intent(this, WebViewActivity::class.java)
-            startActivity(intent)
+            startActivity(
+                Intent(this, WebViewActivity::class.java)
+            )
         }
     }
 
     override fun onStart() {
         super.onStart()
-        Log.e("MainActivity", "Main Activity terlihat di layar")
+        Log.d("MainActivity", "MainActivity terlihat di layar")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("MainActivity", "Main Activity dihapus dari stack")
+        Log.d("MainActivity", "MainActivity dihancurkan")
     }
 
-    // Menampilkan menu pada Toolbar
+    // Menampilkan menu Toolbar
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
@@ -73,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     // Mengatur aksi menu Toolbar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+
             R.id.action_search -> {
                 Toast.makeText(
                     this,
@@ -82,16 +86,31 @@ class MainActivity : AppCompatActivity() {
                 true
             }
 
-            R.id.action_theme, R.id.action_settings -> {
+            R.id.action_theme,
+            R.id.action_settings -> {
                 showThemeChoiceDialog()
                 true
             }
 
             R.id.action_logout -> {
-                val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-                sharedPref.edit { putBoolean("isLogin", false) }
-                val intent = Intent(this, AuthActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                // Mengubah status login tanpa menghapus data registrasi
+                getSharedPreferences(
+                    "user_pref",
+                    MODE_PRIVATE
+                ).edit {
+                    putBoolean("isLogin", false)
+                    remove("usernameLogin")
+                }
+
+                // Kembali ke AuthActivity dan menghapus halaman sebelumnya
+                val intent = Intent(
+                    this,
+                    AuthActivity::class.java
+                ).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+
                 startActivity(intent)
                 finish()
                 true
@@ -101,9 +120,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Dialog pengaturan tema
     private fun showThemeChoiceDialog() {
-        val options = arrayOf("Ikuti Sistem", "Mode Terang (Light Mode)", "Mode Gelap (Dark Mode)")
-        val checkedItem = when (ThemePreferences.getSavedThemeMode(this)) {
+
+        val options = arrayOf(
+            "Ikuti Sistem",
+            "Mode Terang (Light Mode)",
+            "Mode Gelap (Dark Mode)"
+        )
+
+        val checkedItem = when (
+            ThemePreferences.getSavedThemeMode(this)
+        ) {
             AppCompatDelegate.MODE_NIGHT_NO -> 1
             AppCompatDelegate.MODE_NIGHT_YES -> 2
             else -> 0
@@ -112,12 +140,18 @@ class MainActivity : AppCompatActivity() {
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.select_theme)
             .setSingleChoiceItems(options, checkedItem) { dialog, which ->
+
                 val selectedMode = when (which) {
                     1 -> AppCompatDelegate.MODE_NIGHT_NO
                     2 -> AppCompatDelegate.MODE_NIGHT_YES
                     else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                 }
-                ThemePreferences.saveThemeMode(this, selectedMode)
+
+                ThemePreferences.saveThemeMode(
+                    this,
+                    selectedMode
+                )
+
                 dialog.dismiss()
             }
             .setNegativeButton("Batal", null)

@@ -109,22 +109,31 @@ class BerandaFragment : Fragment() {
 
             R.id.action_logout -> {
                 val sharedPreferences = requireActivity()
-                    .getSharedPreferences("user_pref", android.content.Context.MODE_PRIVATE)
+                    .getSharedPreferences(
+                        "user_pref",
+                        android.content.Context.MODE_PRIVATE
+                    )
 
+                // Hapus status login saja
                 sharedPreferences.edit()
-                    .clear()
+                    .putBoolean("isLogin", false)
+                    .remove("usernameLogin")
                     .apply()
 
+                // Kembali ke halaman Auth dan hapus halaman sebelumnya
                 val intent = Intent(
                     requireContext(),
                     AuthActivity::class.java
                 )
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
-                        Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+                intent.flags =
+                    Intent.FLAG_ACTIVITY_NEW_TASK or
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK
 
                 startActivity(intent)
                 true
             }
+
 
             else -> super.onOptionsItemSelected(item)
         }

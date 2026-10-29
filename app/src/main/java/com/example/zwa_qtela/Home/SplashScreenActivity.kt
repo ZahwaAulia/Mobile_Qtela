@@ -7,8 +7,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.zwa_qtela.R
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +32,12 @@ class SplashScreenActivity : AppCompatActivity() {
 
             if (isLogin) {
                 startActivity(
-                    Intent(this@SplashScreenActivity, MainActivity::class.java))
+                    Intent(this@SplashScreenActivity, BaseActivity::class.java)
+                )
             } else {
                 startActivity(
-                    Intent(this@SplashScreenActivity, AuthActivity::class.java))
+                    Intent(this@SplashScreenActivity, AuthActivity::class.java)
+                )
             }
             finish()
         }
