@@ -1,105 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF8EC"
+    android:fillViewport="true"
+    android:scrollbars="none"
     tools:context=".Home.RegisterActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
-        <TextView
+        <!-- HEADER -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrasi SHUTTLY"
-            android:textColor="#1A523A"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:orientation="vertical"
+            android:background="#1A523A"
+            android:padding="24dp"
+            android:layout_marginBottom="22dp">
 
-        <EditText
-            android:id="@+id/edNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nama"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/edEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/edTanggalLahir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Pilih tanggal lahir"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Jenis Kelamin"
-            android:textColor="#1A523A"
-            android:textStyle="bold" />
-
-        <RadioGroup
-            android:id="@+id/rgJenisKelamin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rbLakiLaki"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Laki-laki" />
+                android:text="SHUTTLY"
+                android:textColor="#F37335"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15" />
 
-            <RadioButton
-                android:id="@+id/rbPerempuan"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Perempuan" />
-        </RadioGroup>
+                android:layout_marginTop="12dp"
+                android:text="Buat Akun Baru!"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edUsername"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Daftarkan dirimu dan nikmati kemudahan booking lapangan badminton."
+                android:textColor="#E5F0E9"
+                android:textSize="14sp"
+                android:lineSpacingExtra="3dp" />
+
+        </LinearLayout>
+
+        <!-- FORM CARD -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
-            android:inputType="text" />
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:strokeWidth="0dp">
 
-        <EditText
-            android:id="@+id/edPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
 
-        <EditText
-            android:id="@+id/edConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:inputType="textPassword" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Pribadi"
+                    android:textColor="#1A523A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSelanjutnya"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="18dp"
+                    android:text="Lengkapi data diri kamu terlebih dahulu."
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
+
+                <!-- NAMA -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Lengkap"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_input_register"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:hint="Masukkan nama lengkap"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:inputType="textPersonName" />
+
+                <!-- EMAIL -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_input_register"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:hint="contoh@email.com"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress" />
+
+                <!-- TANGGAL LAHIR -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edTanggalLahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_input_register"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:hint="Pilih tanggal lahir"
+                    android:textSize="14sp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
+                    android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+                    android:drawablePadding="10dp" />
+
+                <!-- JENIS KELAMIN -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgJenisKelamin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_input_register"
+                    android:padding="8dp">
+
+                    <RadioButton
+                        android:id="@+id/rbLakiLaki"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A523A"
+                        android:text="Laki-laki"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbPerempuan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#1A523A"
+                        android:text="Perempuan"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
+
+                </RadioGroup>
+
+                <!-- AKUN -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Akun"
+                    android:textColor="#1A523A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="18dp"
+                    android:text="Buat username dan password untuk login."
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
+
+                <!-- USERNAME -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_input_register"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:hint="Buat username"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:inputType="text" />
+
+                <!-- PASSWORD -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_input_register"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:hint="Masukkan password"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+                <!-- KONFIRMASI PASSWORD -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Konfirmasi Password"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/edConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="22dp"
+                    android:background="@drawable/bg_input_register"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:hint="Ulangi password"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+                <!-- BUTTON -->
+                <Button
+                    android:id="@+id/btnSelanjutnya"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#1A523A"
+                    android:text="Selanjutnya"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="14dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- FOOTER -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#1A523A"
-            android:text="Selanjutnya"
-            android:textColor="#FFFFFF" />
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="SHUTTLY • Badminton Booking"
+            android:textColor="#999999"
+            android:textSize="11sp" />
 
     </LinearLayout>
+
 </ScrollView>

@@ -4,12 +4,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.zwa_qtela.Booking.BookingFragment
 import com.example.zwa_qtela.R
 
 class LapanganFragment : Fragment() {
+
+
+    private val listLapangan = listOf(
+        LapanganModel(
+            "LAPANGAN 1",
+            "Rp35.000 / jam",
+            R.drawable.lapangan1,
+            "Lantai badminton • Lampu LED"
+        ),
+        LapanganModel(
+            "LAPANGAN 2",
+            "Rp35.000 / jam",
+            R.drawable.lapangan2,
+            "Lantai badminton • Area parkir"
+        )
+    )
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,15 +39,15 @@ class LapanganFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnBooking1 = view.findViewById<Button>(R.id.btnBookingLapangan1)
-        val btnBooking2 = view.findViewById<Button>(R.id.btnBookingLapangan2)
+        val rvLapangan = view.findViewById<RecyclerView>(R.id.rvLapangan)
 
-        btnBooking1?.setOnClickListener {
-            navigateToBooking("LAPANGAN 1")
+        val adapter = LapanganAdapter(listLapangan) { selectedItem ->
+            navigateToBooking(selectedItem.name)
         }
 
-        btnBooking2?.setOnClickListener {
-            navigateToBooking("LAPANGAN 2")
+        rvLapangan?.apply {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            this.adapter = adapter
         }
     }
 

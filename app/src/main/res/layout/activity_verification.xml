@@ -1,55 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF8EC"
+    android:fillViewport="true"
     tools:context=".Home.VerificationActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
-        <TextView
+        <!-- Header -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Verifikasi Registrasi"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:background="#1A523A"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SHUTTLY"
+                android:textColor="#F37335"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Verifikasi Registrasi"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Pastikan semua data yang kamu masukkan sudah benar sebelum melanjutkan."
+                android:textColor="#E4EEE7"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+        <!-- Informasi Verifikasi -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Periksa kembali seluruh data yang kamu masukkan."
-            android:textSize="14sp" />
+            android:layout_marginTop="24dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Periksa Data Kamu"
+                android:textColor="#1A523A"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Berikut adalah informasi registrasi yang telah kamu isi."
+                android:textColor="#777777"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:background="#E5E5E5" />
 
             <TextView
                 android:id="@+id/tvDataRegistrasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#F8F9F6"
                 android:padding="16dp"
-                android:textSize="16sp" />
+                android:text="Data registrasi akan ditampilkan di sini."
+                android:textColor="#333333"
+                android:textSize="15sp"
+                android:lineSpacingExtra="6dp" />
 
+        </LinearLayout>
+
+        <!-- Tombol -->
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="28dp"
             android:backgroundTint="#1A523A"
-            android:text="Submit"
-            android:textColor="#FFFFFF" />
+            android:text="Konfirmasi Registrasi"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnKembali"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#F37335"
             android:text="Kembali"
-            android:textColor="#FFFFFF" />
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="SHUTTLY • Badminton Booking"
+            android:textColor="#888888"
+            android:textSize="12sp" />
 
     </LinearLayout>
+
 </ScrollView>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.zwa_qtela.Onboarding.OnboardingActivity
 import com.example.zwa_qtela.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -36,7 +37,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 )
             } else {
                 startActivity(
-                    Intent(this@SplashScreenActivity, AuthActivity::class.java)
+                    Intent(this@SplashScreenActivity, OnboardingActivity::class.java)
                 )
             }
             finish()

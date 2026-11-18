@@ -1,4 +1,3 @@
-
 package com.example.zwa_qtela.Home
 
 import android.content.Intent
@@ -16,6 +15,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.zwa_qtela.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BerandaFragment : Fragment() {
 
@@ -41,6 +41,7 @@ class BerandaFragment : Fragment() {
 
         // Mengatur jarak konten dari status bar dan navigation bar
         ViewCompat.setOnApplyWindowInsetsListener(view) { currentView, insets ->
+
             val systemBars = insets.getInsets(
                 WindowInsetsCompat.Type.systemBars()
             )
@@ -73,6 +74,34 @@ class BerandaFragment : Fragment() {
             )
             startActivity(intent)
         }
+
+        // Mengambil Bottom Navigation dari BaseActivity
+        val bottomNav = requireActivity().findViewById<BottomNavigationView>(
+            R.id.bottom_nav_view
+        )
+
+        // Mengambil kartu menu Grid
+        val cardMenuLapangan = view.findViewById<View>(R.id.cardMenuLapangan)
+        val cardMenuBooking = view.findViewById<View>(R.id.cardMenuBooking)
+        val cardMenuRiwayat = view.findViewById<View>(R.id.cardMenuRiwayat)
+        val cardMenuProfil = view.findViewById<View>(R.id.cardMenuProfil)
+
+        // Menghubungkan menu Grid dengan Bottom Navigation
+        cardMenuLapangan.setOnClickListener {
+            bottomNav.selectedItemId = R.id.nav_lapangan
+        }
+
+        cardMenuBooking.setOnClickListener {
+            bottomNav.selectedItemId = R.id.nav_booking
+        }
+
+        cardMenuRiwayat.setOnClickListener {
+            bottomNav.selectedItemId = R.id.nav_riwayat
+        }
+
+        cardMenuProfil.setOnClickListener {
+            bottomNav.selectedItemId = R.id.nav_profile
+        }
     }
 
     // Menampilkan menu pada Toolbar
@@ -85,7 +114,6 @@ class BerandaFragment : Fragment() {
     }
 
     // Mengatur aksi menu Toolbar
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
 
@@ -134,11 +162,9 @@ class BerandaFragment : Fragment() {
                 true
             }
 
-
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 
     override fun onStart() {
         super.onStart()
