@@ -44,7 +44,10 @@
             android:name=".Home.VerificationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
+        <activity
+            android:name=".Home.SuccessActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Home.SplashScreenActivity"
             android:exported="true"

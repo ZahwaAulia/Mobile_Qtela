@@ -88,8 +88,8 @@ class RegisterActivity : AppCompatActivity() {
                 else -> ""
             }
 
-            // Semua data disimpan untuk diperiksa di halaman verifikasi
-            sharedPref.edit {
+            // Semua data disimpan untuk diperiksa di halaman verifikasi (commit sinkron)
+            sharedPref.edit(commit = true) {
                 putString("reg_nama", nama)
                 putString("reg_email", email)
                 putString("reg_tanggalLahir", tanggalLahir)
